@@ -29,7 +29,6 @@
 		"prettier-plugin-svelte": "^3.1.2",
 		"svelte": "^5.0.0-next.1",
 		"svelte-check": "^3.6.0",
-		"svelte-google-materialdesign-icons": "^1.0.3",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.0.0-alpha.20",
@@ -38,6 +37,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/montserrat": "^5.0.19",
-		"@master/normal.css": "^3.1.0"
+		"@master/normal.css": "^3.1.0",
+		"lucide-svelte": "^0.395.0"
 	}
 }
