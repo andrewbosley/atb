@@ -17,8 +17,8 @@
 
 	:root[dataTheme='lightMode'] {
 		--Accent: #cd580a;
-		--PColor1: #ffffff;
-		--PColor2: #f9fafb;
+		--PColor1: #f9fafb;
+		--PColor2: #f1f0f1;
 		--SColor1: #e5e7eb;
 		--SColor2: #b4b3b3;
 		--TColor: #444444;

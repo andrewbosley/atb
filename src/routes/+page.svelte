@@ -4,7 +4,9 @@
 
 <h1>Welcome to ATB</h1>
 <p>Visit <a href="https://andrewtbosley.com/">andrew.t.bosley</a> to find me</p>
-<ThemeToggle />
+<div class="themeToggle">
+	<ThemeToggle />
+</div>
 
 <div class="container">
 	<div class="card a">Dark - PColor1</div>
@@ -22,11 +24,17 @@
 </div>
 
 <style>
+	.themeToggle {
+		padding: 10px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
+	}
 	.container {
 		display: flex;
 		flex-wrap: wrap;
 		max-width: 100%;
-
 	}
 	.card {
 		width: 300px;
@@ -48,10 +56,10 @@
 		background: #444444;
 	}
 	.f {
-		background: #ffffff;
+		background: #f9fafb;
 	}
 	.g {
-		background: #f9fafb;
+		background: #f1f0f1;
 	}
 	.h {
 		background: #e5e7eb;
