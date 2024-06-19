@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ThemeToggle from '$lib/toggleTheme.svelte';
+	import Button from '$lib/standardButton.svelte';
 </script>
 
 <h1>Welcome to ATB</h1>
@@ -7,6 +8,7 @@
 <div class="themeToggle">
 	<ThemeToggle />
 </div>
+<div class="button"><Button href="/">Example</Button></div>
 
 <div class="container">
 	<div class="card a">Dark - PColor1</div>
@@ -24,6 +26,13 @@
 </div>
 
 <style>
+	.button {
+		padding: 10px;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 	.themeToggle {
 		padding: 10px;
 		position: absolute;
@@ -35,6 +44,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		max-width: 100%;
+		padding: 20px;
 	}
 	.card {
 		width: 300px;
