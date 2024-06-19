@@ -56,10 +56,10 @@
 		background: #444444;
 	}
 	.f {
-		background: #ffffff;
+		background: #f9fafb;
 	}
 	.g {
-		background: #f9fafb;
+		background: #f1f0f1;
 	}
 	.h {
 		background: #e5e7eb;

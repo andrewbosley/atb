@@ -2,6 +2,8 @@
 	import SwirlCircle from '$lib/swirlCircle.svelte';
 	import { page } from '$app/stores';
 	import ThemeToggle from '$lib/toggleTheme.svelte';
+	import Button from '$lib/standardButton.svelte';
+
 	// Change number of BG status codes based on screen width.
 	// Get screen width
 	function getScreenWidth(): number {
@@ -48,14 +50,13 @@
 		<ThemeToggle />
 	</div>
 
-	<a href="/">
-		<div class="circle">
-			<SwirlCircle>
-				<h1>{$page.status}</h1>
-				<h2>{$page?.error?.message}</h2>
-			</SwirlCircle>
-		</div>
-	</a>
+	<div class="circle">
+		<SwirlCircle>
+			<h1>{$page.status}</h1>
+			<h2>{$page?.error?.message}</h2>
+		</SwirlCircle>
+	</div>
+	<Button href="/">Return Home</Button>
 </div>
 
 <style>
@@ -69,6 +70,7 @@
 
 	.container {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
@@ -78,8 +80,8 @@
 		animation: blur 20s ease-in-out infinite;
 		width: 500px;
 		height: 500px;
+		margin-bottom: 50px;
 	}
-
 	h1 {
 		text-align: center;
 		color: var(--TColor);
@@ -92,7 +94,6 @@
 		text-align: center;
 		color: var(--Accent);
 		font-size: 2em;
-		font-weight: bold;
 		text-transform: uppercase;
 	}
 
