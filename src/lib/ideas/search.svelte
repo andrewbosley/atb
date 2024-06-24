@@ -6,11 +6,9 @@
 
 <style>
 	.text {
-		background-color: var(--SColor2);
+		background-color: var(--hcolor);
 		border-radius: 25px;
-		width: 500px;
-		height: 50px;
-		padding: 30px;
-		margin: 10px;
+		width: 450px;
+		padding: 10px;
 	}
 </style>

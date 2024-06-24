@@ -78,44 +78,44 @@
 
 	.circle {
 		animation: blur 20s ease-in-out infinite;
-		width: 500px;
-		height: 500px;
+		width: 400px;
+		height: 400px;
 		margin-bottom: 50px;
 	}
 	h1 {
 		text-align: center;
-		color: var(--TColor);
+		color: var(--ocolor);
 		font-weight: bold;
-		font-size: 8em;
-		text-shadow: 0px 10px 0 var(--SColor1);
+		font-size: 7em;
+		text-shadow: 0px 10px 0 var(--hcolor);
 	}
 
 	h2 {
 		text-align: center;
-		color: var(--Accent);
-		font-size: 2em;
+		color: var(--acolor);
+		font-size: 1.8em;
 		text-transform: uppercase;
 	}
 
 	@media (max-width: 1000px) {
 		.circle {
-			width: 300px;
-			height: 300px;
+			width: 280px;
+			height: 280px;
 		}
 
 		h1 {
-			font-size: 4em;
-			text-shadow: 0px -5px 0 var(--SColor1);
+			font-size: 5em;
+			text-shadow: 0px 5px 0 var(--hcolor);
 		}
 
 		h2 {
-			font-size: 1em;
+			font-size: 1.2em;
 		}
 	}
 
 	.random-div:hover {
 		transform: scale(5);
-		color: var(--Accent);
+		color: var(--acolor);
 		font-weight: bold;
 	}
 

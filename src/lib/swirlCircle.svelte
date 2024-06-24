@@ -1,6 +1,14 @@
 <!--
 	@component
 	Circle with orange rotating glow.
+
+	```
+	<div class="circle">
+		<SwirlCircle>
+			<stuff/>
+		</SwirlCircle>
+	</div>
+	```
 -->
 
 <script lang="ts">
@@ -44,7 +52,7 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
-		background: linear-gradient(transparent, var(--Accent));
+		background: linear-gradient(transparent, var(--acolor));
 		filter: blur(15px);
 	}
 
@@ -55,8 +63,8 @@
 		left: 20px;
 		right: 20px;
 		bottom: 20px;
-		background: var(--PColor2);
-		border: solid var(--PColor1) 2px;
+		background: var(--scolor);
+		border: solid var(--pcolor) 2px;
 		border-radius: 50%;
 	}
 </style>

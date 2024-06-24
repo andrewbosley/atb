@@ -11,18 +11,14 @@
 <div class="button"><Button href="/">Example</Button></div>
 
 <div class="container">
-	<div class="card a">Dark - PColor1</div>
-	<div class="card b">Dark - PColor2</div>
-	<div class="card c">Dark - SColor1</div>
-	<div class="card d">Dark - SColor2</div>
-	<div class="card f">Light - PColor1</div>
-	<div class="card g">Light - PColor2</div>
-	<div class="card h">Light - SColor1</div>
-	<div class="card i">Light - SColor2</div>
-	<div class="card j">Theme - PColor1</div>
-	<div class="card k">Theme - PColor2</div>
-	<div class="card l">Theme - SColor1</div>
-	<div class="card m">Theme - SColor2</div>
+	<div class="card a">pcolor</div>
+	<div class="card b">scolor</div>
+	<div class="card c">hcolor</div>
+	<div class="card d">acolor</div>
+	<div class="card">
+		<div class="card2 e">bcolor</div>
+		<div class="card2 f">ocolor</div>
+	</div>
 </div>
 
 <style>
@@ -47,46 +43,35 @@
 		padding: 20px;
 	}
 	.card {
-		width: 300px;
-		height: 300px;
+		height: 250px;
 		margin: 20px;
-		flex-basis: calc(25% - 40px);
+		flex-basis: calc(20% - 40px);
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 100%;
+	}
+
+	.card2 {
+		height: 250px;
+		flex-basis: calc(50%);
 	}
 
 	.a {
-		background: #1c1c1c;
+		background: var(--pcolor);
 	}
 	.b {
-		background: #222222;
+		background: var(--scolor);
 	}
 	.c {
-		background: #333333;
+		background: var(--hcolor);
 	}
 	.d {
-		background: #444444;
+		background: var(--acolor);
+	}
+	.e {
+		background: var(--bcolor);
 	}
 	.f {
-		background: #f9fafb;
-	}
-	.g {
-		background: #f1f0f1;
-	}
-	.h {
-		background: #e5e7eb;
-	}
-	.i {
-		background: #b4b3b3;
-	}
-	.j {
-		background: var(--PColor1);
-	}
-	.k {
-		background: var(--PColor2);
-	}
-	.l {
-		background: var(--SColor1);
-	}
-	.m {
-		background: var(--SColor2);
+		background: var(--ocolor);
 	}
 </style>

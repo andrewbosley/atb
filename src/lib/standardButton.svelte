@@ -2,6 +2,10 @@
 	@component
 	Button - Update styles and choices localStorage, min width, resize on media etc
 	Used on error page
+
+	```
+		<Button href="/">Example</Button>
+	```
 -->
 
 <script lang="ts">
@@ -10,21 +14,20 @@
 </script>
 
 <a {href} {target} class="button">
-		<span><slot /></span>
+	<span><slot /></span>
 </a>
 
 <style>
 	.button {
-		border-color: var(--Accent);
+		border-color: var(--acolor);
 		text-transform: uppercase;
 		display: block;
 		cursor: pointer;
 		overflow: hidden;
 		position: relative;
-		color: var(--TColor);
-		background-color: var(--PColor2);
-		border-width: 3px;
-		font-weight: 600;
+		background-color: var(--scolor);
+		border: 2px solid var(--acolor);
+		font-weight: 500;
 		border-radius: 8px;
 		padding: 15px 35px;
 	}
@@ -35,8 +38,8 @@
 	}
 
 	.button:hover {
-		box-shadow: 0 0 15px var(--Accent);
-		background: var(--Accent);
-		color: var(--PColor2);
+		box-shadow: 0 0 10px var(--acolor);
+		background: var(--acolor);
+		color: var(--scolor);
 	}
 </style>
