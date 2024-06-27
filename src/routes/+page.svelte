@@ -3,6 +3,33 @@
 	import ThemeToggle from '$lib/toggleTheme.svelte';
 	import BurgerMenu from '$lib/burgerMenu.svelte';
 	import SocialMedia from '$lib/socialButton.svelte';
+	import { onMount } from 'svelte';
+
+	let menuPosition = {};
+
+	function updateMenuPosition() {
+		if (window.innerWidth <= 650) {
+			menuPosition = {
+				top: '30px',
+				right: '0px',
+				left: '-200px',
+				bottom: '-370px'
+			};
+		} else {
+			menuPosition = {
+				top: '55px',
+				right: '0px',
+				left: '300px',
+				bottom: '-300px'
+			};
+		}
+	}
+
+	onMount(() => {
+		updateMenuPosition();
+		window.addEventListener('resize', updateMenuPosition);
+		return () => window.removeEventListener('resize', updateMenuPosition);
+	});
 
 </script>
 
@@ -24,12 +51,7 @@
 						{ url: '/ideas', text: 'Ideas' },
 						{ url: '/ertetrt', text: 'Error' }
 					]}
-					menuPosition={{
-						top: '55px',
-						right: '0px',
-						left: '220px',
-						bottom: '-300px'
-					}}
+					menuPosition={menuPosition}
 				/>
 			</div>
 		</nav>
@@ -37,7 +59,9 @@
 		<div class="content">
 			<div class="about">
 				<h1>Hello World!</h1>
-				<p>This is me.</p>
+				<p>
+					This is me.
+				</p>
 			</div>
 			<div class="me">
 				<img src={me} alt="Me" />
@@ -50,9 +74,11 @@
 <style>
 	main {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+		width: 100vw;
 	}
 
 	.themeToggle {
@@ -77,7 +103,7 @@
 		position: absolute;
 		top: 20px;
 		left: -20px;
-		border-radius: 20px 0 0 20px;
+		border-radius: 15px 0 0 5px;
 	}
 
 	.navbar:after {
@@ -87,8 +113,8 @@
 		height: 100%;
 		background-color: var(--acolor);
 		width: 20px;
-		right: -20px;
-		border-radius: 0 20px 20px 0;
+		right: -19px;
+		border-radius: 0 5px 15px 0;
 		animation: navFall 20s forwards;
 		animation-delay: 61s;
 	}
@@ -146,11 +172,13 @@
 		font-size: 2em;
 		color: var(--acolor);
 		margin-bottom: 25px;
+		font-weight: 700;
 	}
 
 	.about p {
 		font-size: 1em;
 		color: var(--acolor);
+		font-weight: 400;
 	}
 
 	.me {
@@ -170,46 +198,52 @@
 		border-radius: 25%;
 	}
 
+	@media (max-width: 650px) {
+		.container {
+			width: 250px;
+			height: unset;
+		}
 
+		.navbar {
+			width: 270px;
+		}
 
+		.navbar .name {
+			padding: 11px 0 11px 31px;
+			font-size: 1.35rem;
+			letter-spacing: 2px;
+		}
+		.navbar .burgerMenu {
+			float: unset;
+			position: absolute;
+			top: 45px;
+			right: 0px;
+			width: 30px;
+			height: 30px;
+			color: var(--acolor);
+		}
 
+		.content {
+			padding: 100px 5px 35px 5px;
+			flex-direction: column;
+		}
 
+		.about {
+			width: 100%;
+		}
 
+		.about h1 {
+			margin-bottom: 35px;
+		}
 
+		.me {
+			width: 100%;
+		}
 
-
-
-
-	@media (max-width: 1000px) {
-		
+		.me img {
+			margin: 30px 0 0;
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	@keyframes navFall {
 		0% {

@@ -34,7 +34,7 @@
 	<div class="name">{profileName}</div>
 	<div class="profiles">
 		<a
-			href="github.com"
+			href="https://github.com/andrewbosley"
 			on:mouseenter={nameGithub}
 			on:mouseleave={nameDefault}
 			target="_blank"
@@ -43,7 +43,7 @@
 			<img src={github} alt="GitHub" class="icon" />
 		</a>
 		<a
-			href="twitter.com"
+			href="https://x.com/andrewtbosley"
 			on:mouseenter={nameTwitter}
 			on:mouseleave={nameDefault}
 			target="_blank"
@@ -52,7 +52,7 @@
 			<img src={twitter} alt="Twitter" class="icon" />
 		</a>
 		<a
-			href="linkedin.com"
+			href="https://www.linkedin.com/in/andrew-bosley/"
 			on:mouseenter={nameLinkedin}
 			on:mouseleave={nameDefault}
 			target="_blank"

@@ -21,8 +21,8 @@
 -->
 
 <script>
-  import MenuOpen from 'lucide-svelte/icons/square-chevron-down';
-  import MenuClose from 'lucide-svelte/icons/square-chevron-up';
+  import MenuOpen from 'lucide-svelte/icons/menu';
+  import MenuClose from 'lucide-svelte/icons/x';
 
   export let links = [];
   let isOpen = false;
