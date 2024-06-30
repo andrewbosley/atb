@@ -30,7 +30,6 @@
 		window.addEventListener('resize', updateMenuPosition);
 		return () => window.removeEventListener('resize', updateMenuPosition);
 	});
-
 </script>
 
 <div class="themeToggle">
@@ -51,7 +50,7 @@
 						{ url: '/ideas', text: 'Ideas' },
 						{ url: '/ertetrt', text: 'Error' }
 					]}
-					menuPosition={menuPosition}
+					{menuPosition}
 				/>
 			</div>
 		</nav>
@@ -59,9 +58,7 @@
 		<div class="content">
 			<div class="about">
 				<h1>Hello World!</h1>
-				<p>
-					This is me.
-				</p>
+				<p>This is me.</p>
 			</div>
 			<div class="me">
 				<img src={me} alt="Me" />
@@ -247,68 +244,67 @@
 
 	@keyframes navFall {
 		0% {
-        transform: translateY(0) translateX(0px) rotate(0deg);
-				opacity: 1;
-    }
+			transform: translateY(0) translateX(0px) rotate(0deg);
+			opacity: 1;
+		}
 		10% {
-        transform: translateY(15px) translateX(0px) rotate(0deg);
-				opacity: 1;
-    }
+			transform: translateY(15px) translateX(0px) rotate(0deg);
+			opacity: 1;
+		}
 		10.5% {
-        transform: translateY(50px) translateX(30px) rotate(50deg);
-				opacity: 1;
-    }
+			transform: translateY(50px) translateX(30px) rotate(50deg);
+			opacity: 1;
+		}
 		11% {
-        transform: translateY(100px) translateX(55px) rotate(100deg);
-				opacity: 1;
-    }
+			transform: translateY(100px) translateX(55px) rotate(100deg);
+			opacity: 1;
+		}
 		11.5% {
-        transform: translateY(150px) translateX(60px) rotate(150deg);
-				opacity: 0.7;
-    }
+			transform: translateY(150px) translateX(60px) rotate(150deg);
+			opacity: 0.7;
+		}
 		12% {
-        transform: translateY(200px) translateX(65px) rotate(200deg);
-				opacity: 0.5;
-    }
+			transform: translateY(200px) translateX(65px) rotate(200deg);
+			opacity: 0.5;
+		}
 		12.5% {
-        transform: translateY(250px) translateX(70px) rotate(250deg);
-				opacity: 0;
-    }
+			transform: translateY(250px) translateX(70px) rotate(250deg);
+			opacity: 0;
+		}
 		100% {
-				transform: translateY(0) translateX(0px) rotate(0deg);
-				opacity: 0;
+			transform: translateY(0) translateX(0px) rotate(0deg);
+			opacity: 0;
 		}
 	}
 
 	@keyframes ballonFloat {
-    0% {
-        transform: rotateY(0deg) translateY(0) translateX(0) scale(1);
-				z-index: -1;
-    }
+		0% {
+			transform: rotateY(0deg) translateY(0) translateX(0) scale(1);
+			z-index: -1;
+		}
 		1% {
-        transform: rotateY(180deg) translateY(-5px) translateX(-15px) scale(1);
-				z-index: -1;
-    }
+			transform: rotateY(180deg) translateY(-5px) translateX(-15px) scale(1);
+			z-index: -1;
+		}
 		20% {
-				transform: rotateY(180deg) translateY(-20px) translateX(-40px) scale(1.5);
-				z-index: 1;
-    }
-    40% {
-        transform: rotateY(180deg) translateY(-100px) translateX(-80px) scale(2);
-				z-index: 1;
-    }
-    75% {
-        transform: rotateY(180deg) translateY(-200px) translateX(-4px) scale(2);
-				z-index: 1;
-    }
-    90% {
-        transform: rotateY(180deg) translateY(-300px) translateX(-60px) scale(2);
-				z-index: 1;
-    }
-    100% {
-        transform: rotateY(180deg) translateY(-4000px) translateX(-40px) scale(5);
-				z-index: 1;
-    }
-}
-
+			transform: rotateY(180deg) translateY(-20px) translateX(-40px) scale(1.5);
+			z-index: 1;
+		}
+		40% {
+			transform: rotateY(180deg) translateY(-100px) translateX(-80px) scale(2);
+			z-index: 1;
+		}
+		75% {
+			transform: rotateY(180deg) translateY(-200px) translateX(-4px) scale(2);
+			z-index: 1;
+		}
+		90% {
+			transform: rotateY(180deg) translateY(-300px) translateX(-60px) scale(2);
+			z-index: 1;
+		}
+		100% {
+			transform: rotateY(180deg) translateY(-4000px) translateX(-40px) scale(5);
+			z-index: 1;
+		}
+	}
 </style>

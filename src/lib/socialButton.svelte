@@ -94,8 +94,8 @@
 		padding: 10px;
 		color: var(--acolor);
 		text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
 	}
 </style>
