@@ -10,7 +10,7 @@
 	```
 -->
 
-<script>
+<script lang="ts">
 	import github from '$lib/images/Icons/github.svg';
 	import twitter from '$lib/images/Icons/x.svg';
 	import linkedin from '$lib/images/Icons/linkedin.svg';

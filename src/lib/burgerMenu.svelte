@@ -20,7 +20,7 @@
 	```
 -->
 
-<script>
+<script lang="ts">
   import MenuOpen from 'lucide-svelte/icons/menu';
   import MenuClose from 'lucide-svelte/icons/x';
 

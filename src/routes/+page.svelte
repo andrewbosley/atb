@@ -106,7 +106,7 @@
 		border-radius: 15px 0 0 5px;
 	}
 
-	.navbar:after {
+	.navbar::after {
 		content: '';
 		position: absolute;
 		top: 0;

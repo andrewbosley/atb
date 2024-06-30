@@ -56,7 +56,7 @@
 		filter: blur(15px);
 	}
 
-	.circle:after {
+	.circle::after {
 		content: '';
 		position: absolute;
 		top: 20px;
