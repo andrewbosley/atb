@@ -5,8 +5,8 @@
 
 <div class="container">
 	<h1>Welcome to SvelteKit</h1>
-	<Search/>
-	<ThemeToggle/>
+	<Search />
+	<ThemeToggle />
 </div>
 
 <style>

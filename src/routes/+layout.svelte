@@ -7,27 +7,26 @@
 
 <style>
 	:root[dataTheme='darkMode'] {
-		--Accent: #d5731e;
-		--PColor1: #1c1c1c;
-		--PColor2: #222222;
-		--SColor1: #333333;
-		--SColor2: #444444;
-		--TColor: #b4b3b3;
+		--pcolor: #1c1c1c;
+		--scolor: #252525;
+		--hcolor: #444444;
+		--ocolor: #ffffff;
+		--bcolor: #000000;
 	}
 
 	:root[dataTheme='lightMode'] {
-		--Accent: #cd580a;
-		--PColor1: #f9fafb;
-		--PColor2: #f1f0f1;
-		--SColor1: #e5e7eb;
-		--SColor2: #b4b3b3;
-		--TColor: #444444;
+		--pcolor: #d4d3d3;
+		--scolor: #cecaca;
+		--hcolor: #b4b3b3;
+		--bcolor: #ffffff;
+		--ocolor: #000000;
 	}
 	:global(body) {
-		background: radial-gradient(circle, var(--PColor1) 0%, var(--PColor2) 100%);
 		font-family: 'Montserrat Variable', sans-serif;
-		color: var(--TColor);
-		font-size: 18px;
-		font-weight: 500;
+		font-size: 20px;
+		font-weight: 400;
+		color: var(--ocolor);
+		background-color: var(--scolor);
+		--acolor: #d5731e;
 	}
 </style>

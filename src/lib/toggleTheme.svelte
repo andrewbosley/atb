@@ -1,6 +1,12 @@
 <!--
 	@component
 	Toggle button to change the theme in use.
+
+	```
+		<div class="themeToggle">
+			<ThemeToggle />
+		</div>
+	```
 -->
 
 <script lang="ts">
@@ -23,7 +29,7 @@
 <button class="toggle-button" on:click={toggleTheme}>
 	<div class="toggle-icon">
 		{#if currentTheme === 'lightMode'}
-			<Light_mode fill="var(--Accent)" size="18" />
+			<Light_mode fill="var(--acolor)" size="18" />
 		{:else}
 			<Dark_mode size="18" />
 		{/if}
@@ -38,8 +44,8 @@
 		height: 28px;
 		border: 2px solid;
 		border-radius: 25px;
-		color: var(--Accent);
-		background-color: var(--Accent);
+		color: var(--acolor);
+		background-color: var(--acolor);
 	}
 
 	.toggle-button:hover {
@@ -57,7 +63,7 @@
 		align-items: center;
 		justify-content: center;
 		transition: left 0.2s ease-in-out;
-		background-color: var(--PColor2);
+		background-color: var(--scolor);
 	}
 
 	:global([dataTheme='lightMode']) .toggle-icon {
