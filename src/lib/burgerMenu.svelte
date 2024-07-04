@@ -21,8 +21,8 @@
 -->
 
 <script lang="ts">
-	import MenuOpen from 'lucide-svelte/icons/menu';
-	import MenuClose from 'lucide-svelte/icons/x';
+	import MenuOpen from 'lucide-svelte/icons/square-menu';
+	import MenuClose from 'lucide-svelte/icons/square-x';
 
 	export let links = [];
 	let isOpen = false;
@@ -71,9 +71,11 @@
 		color: var(--acolor);
 		padding: 30px;
 		position: absolute;
-		font-size: 1.5em;
+		font-size: 1.6em;
 		text-align: right;
 		z-index: 100;
+		font-weight: 700;
+
 	}
 
 	.menuContainer a:hover {

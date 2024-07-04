@@ -4,7 +4,7 @@
 </script>
 
 <div class="container">
-	<h1>Welcome to SvelteKit</h1>
+	<h1>Welcome to ATB</h1>
 	<Search />
 	<ThemeToggle />
 </div>
