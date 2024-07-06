@@ -130,7 +130,7 @@
 		float: left;
 		color: var(--pcolor);
 		padding: 11px 0 0 30px;
-		font-size: 1.6rem;
+		font-size: 1.7rem;
 		letter-spacing: 5px;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -140,7 +140,7 @@
 		float: right;
 		width: 35px;
 		height: 35px;
-		margin: 8px 10px;
+		margin: 9px 10px;
 		color: var(--pcolor);
 	}
 
@@ -166,14 +166,14 @@
 	}
 
 	.about h1 {
-		font-size: 2em;
+		font-size: 2.5rem;
 		color: var(--acolor);
 		margin-bottom: 25px;
 		font-weight: 700;
 	}
 
 	.about p {
-		font-size: 1em;
+		font-size: 1.3rem;
 		color: var(--acolor);
 		font-weight: 400;
 	}
@@ -206,8 +206,8 @@
 		}
 
 		.navbar .name {
-			padding: 11px 0 11px 31px;
-			font-size: 1.35rem;
+			padding: 10px 0 10px 26px;
+			font-size: 1.4rem;
 			letter-spacing: 2px;
 		}
 		.navbar .burgerMenu {

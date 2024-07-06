@@ -17,9 +17,9 @@
 		if (screenWidth < 500) {
 			screenSizeVariable = 20;
 		} else if (screenWidth < 1200) {
-			screenSizeVariable = 60;
+			screenSizeVariable = 50;
 		} else {
-			screenSizeVariable = 130;
+			screenSizeVariable = 90;
 		}
 	}
 	updateVariableBasedOnScreenSize();
@@ -86,14 +86,14 @@
 		text-align: center;
 		color: var(--ocolor);
 		font-weight: bold;
-		font-size: 7em;
+		font-size: 6rem;
 		text-shadow: 0px 10px 0 var(--hcolor);
 	}
 
 	h2 {
 		text-align: center;
 		color: var(--acolor);
-		font-size: 1.8em;
+		font-size: 1.5rem;
 		text-transform: uppercase;
 	}
 
@@ -104,12 +104,12 @@
 		}
 
 		h1 {
-			font-size: 5em;
+			font-size: 4rem;
 			text-shadow: 0px 5px 0 var(--hcolor);
 		}
 
 		h2 {
-			font-size: 1.2em;
+			font-size: 1rem;
 		}
 	}
 
@@ -123,6 +123,7 @@
 		position: fixed;
 		display: block;
 		animation: fading 3s infinite;
+		font-size: 1rem;
 	}
 
 	.random-div[data-id='1'] {

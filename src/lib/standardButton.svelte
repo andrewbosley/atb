@@ -27,9 +27,10 @@
 		position: relative;
 		background-color: var(--scolor);
 		border: 2px solid var(--acolor);
-		font-weight: 500;
+		font-size: 1rem;
+		font-weight: 600;
 		border-radius: 8px;
-		padding: 15px 35px;
+		padding: 15px;
 	}
 
 	.button span {
