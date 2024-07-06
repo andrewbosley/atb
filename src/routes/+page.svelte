@@ -129,7 +129,7 @@
 	.navbar .name {
 		float: left;
 		color: var(--pcolor);
-		padding: 10px 0 10px 30px;
+		padding: 11px 0 0 30px;
 		font-size: 1.7rem;
 		letter-spacing: 5px;
 		text-transform: uppercase;
@@ -140,7 +140,7 @@
 		float: right;
 		width: 35px;
 		height: 35px;
-		margin: 8px 10px;
+		margin: 9px 10px;
 		color: var(--pcolor);
 	}
 
