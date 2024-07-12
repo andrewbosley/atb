@@ -1,14 +1,12 @@
 <script lang="ts">
 	import ThemeToggle from '$lib/toggleTheme.svelte';
 	import Button from '$lib/standardButton.svelte';
+	import Search from '$lib/ideas/search.svelte';
 </script>
 
-<h1>Welcome to ATB</h1>
-<p>Visit <a href="https://andrewtbosley.com/">andrew.t.bosley</a> to find me</p>
 <div class="themeToggle">
 	<ThemeToggle />
 </div>
-<div class="button"><Button href="/">Example</Button></div>
 
 <div class="container">
 	<div class="card a">pcolor</div>
@@ -21,13 +19,14 @@
 	</div>
 </div>
 
+<div class="other">
+	<Search />
+	<div class="button"><Button href="/">Button</Button></div>
+</div>
+
 <style>
 	.button {
 		padding: 10px;
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
 	}
 	.themeToggle {
 		padding: 10px;
@@ -36,11 +35,17 @@
 		right: 0;
 		z-index: 10;
 	}
+	.other {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 	.container {
 		display: flex;
 		flex-wrap: wrap;
 		max-width: 100%;
-		padding: 20px;
+		padding: 50px;
 	}
 	.card {
 		height: 250px;
@@ -73,5 +78,6 @@
 	}
 	.f {
 		background: var(--ocolor);
+		color: var(--bcolor);
 	}
 </style>

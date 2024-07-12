@@ -1,5 +1,6 @@
 <script lang="ts">
-	import me from '$lib/images/test.jpg';
+	import me from '$lib/images/me.jpg';
+	import balloon from '$lib/images/balloon.png';
 	import ThemeToggle from '$lib/toggleTheme.svelte';
 	import BurgerMenu from '$lib/burgerMenu.svelte';
 	import SocialMedia from '$lib/socialButton.svelte';
@@ -40,15 +41,16 @@
 	<div class="container">
 		<nav class="navbar">
 			<span class="name">Andrew Bosley</span>
-			<div class="ballon">
-				<a href="/ballon" target="_self">🎈</a>
+			<div class="Balloon">
+				<!-- <a href="/Balloon" target="_self"> -->
+				<img src={balloon} alt="balloon" />
+				<!-- </a> -->
 			</div>
 			<div class="burgerMenu">
 				<BurgerMenu
 					links={[
-						{ url: '/examples', text: 'Examples' },
 						{ url: '/ideas', text: 'Ideas' },
-						{ url: '/ertetrt', text: 'Error' }
+						{ url: '/error', text: 'Error' }
 					]}
 					{menuPosition}
 				/>
@@ -116,14 +118,13 @@
 		animation-delay: 61s;
 	}
 
-	.ballon {
+	.Balloon {
 		position: absolute;
 		top: 25px;
 		right: 0;
 		z-index: -1;
-		filter: hue-rotate(30deg);
-		animation: ballonFloat 30s linear forwards;
-		animation-delay: 61.6s;
+		animation: balloonFloat 30s linear forwards;
+		animation-delay: 61.9s;
 	}
 
 	.navbar .name {
@@ -142,6 +143,7 @@
 		height: 35px;
 		margin: 9px 10px;
 		color: var(--pcolor);
+		visibility: hidden;
 	}
 
 	.navbar .burgerMenu:hover {
@@ -277,33 +279,33 @@
 		}
 	}
 
-	@keyframes ballonFloat {
+	@keyframes balloonFloat {
 		0% {
-			transform: rotateY(0deg) translateY(0) translateX(0) scale(1);
+			transform: translateY(0) translateX(0) scale(1);
 			z-index: -1;
 		}
 		1% {
-			transform: rotateY(180deg) translateY(-5px) translateX(-15px) scale(1);
+			transform: translateY(-15px) translateX(15px) scale(1);
 			z-index: -1;
 		}
 		20% {
-			transform: rotateY(180deg) translateY(-20px) translateX(-40px) scale(1.5);
-			z-index: 1;
+			transform: translateY(-35px) translateX(40px);
+			z-index: -1;
 		}
 		40% {
-			transform: rotateY(180deg) translateY(-100px) translateX(-80px) scale(2);
+			transform: translateY(-100px) translateX(80px);
 			z-index: 1;
 		}
 		75% {
-			transform: rotateY(180deg) translateY(-200px) translateX(-4px) scale(2);
+			transform: translateY(-200px) translateX(4px);
 			z-index: 1;
 		}
 		90% {
-			transform: rotateY(180deg) translateY(-300px) translateX(-60px) scale(2);
+			transform: translateY(-300px) translateX(60px);
 			z-index: 1;
 		}
 		100% {
-			transform: rotateY(180deg) translateY(-4000px) translateX(-40px) scale(5);
+			transform: translateY(-4000px) translateX(40px);
 			z-index: 1;
 		}
 	}

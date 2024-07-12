@@ -75,7 +75,6 @@
 		text-align: right;
 		z-index: 100;
 		font-weight: 700;
-
 	}
 
 	.menuContainer a:hover {
