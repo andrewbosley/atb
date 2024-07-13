@@ -15,11 +15,11 @@
 	}
 
 	:root[dataTheme='lightMode'] {
-		--pcolor: #d4d3d3;
-		--scolor: #cecaca;
+		--pcolor: #dddddd;
+		--scolor: #fcfcfc;
 		--hcolor: #b4b3b3;
-		--bcolor: #ffffff;
 		--ocolor: #000000;
+		--bcolor: #ffffff;
 	}
 	:global(body) {
 		font-family: 'Montserrat Variable', sans-serif;
@@ -28,6 +28,5 @@
 		color: var(--ocolor);
 		background-color: var(--scolor);
 		--acolor: #d5731e;
-		/* --acolor: #cd580a; */
 	}
 </style>
