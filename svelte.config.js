@@ -7,7 +7,7 @@ const config = {
 	trailingSlash: 'never',
 	kit: {
 		adapter: adapter({
-			fallback: '404.html' //Need to update
+			fallback: '404.html'
 		})
 	}
 };
