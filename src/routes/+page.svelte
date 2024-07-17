@@ -1,5 +1,4 @@
 <script lang="ts">
-	import me from '$lib/images/me.jpg';
 	import balloon from '$lib/images/balloon.png';
 	import ThemeToggle from '$lib/toggleTheme.svelte';
 	import BurgerMenu from '$lib/burgerMenu.svelte';
@@ -63,7 +62,7 @@
 				<p>This is me.</p>
 			</div>
 			<div class="me">
-				<img src={me} alt="Me" />
+				<enhanced:img src="$lib/images/me.jpg" alt="Me"> </enhanced:img>
 				<SocialMedia />
 			</div>
 		</div>
