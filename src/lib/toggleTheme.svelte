@@ -26,7 +26,7 @@
 	};
 </script>
 
-<button class="toggle-button" on:click={toggleTheme}>
+<button class="toggle-button" aria-label="Toggle theme" on:click={toggleTheme}>
 	<div class="toggle-icon">
 		{#if currentTheme === 'lightMode'}
 			<Light_mode fill="var(--acolor)" size="18" />
