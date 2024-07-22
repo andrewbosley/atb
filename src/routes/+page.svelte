@@ -92,7 +92,7 @@
 		background-color: var(--pcolor);
 		align-items: center;
 		justify-content: center;
-		border-radius: 25px;
+		border-radius: 15px;
 	}
 
 	.navbar {
@@ -101,7 +101,7 @@
 		position: absolute;
 		top: 20px;
 		left: -20px;
-		border-radius: 15px 0 0 5px;
+		border-radius: 15px 0 0 15px;
 	}
 
 	.navbar::after {
@@ -112,7 +112,7 @@
 		background-color: var(--acolor);
 		width: 20px;
 		right: -19px;
-		border-radius: 0 5px 15px 0;
+		border-radius: 0 15px 15px 0;
 		animation: navFall 20s forwards;
 		animation-delay: 61s;
 	}
@@ -123,7 +123,7 @@
 		right: 0;
 		z-index: -1;
 		animation: balloonFloat 30s linear forwards;
-		animation-delay: 61.9s;
+		animation-delay: 62.5s;
 	}
 
 	.navbar .name {
@@ -193,7 +193,7 @@
 		width: 200px;
 		height: 200px;
 		padding: 20px;
-		border-radius: 25%;
+		border-radius: 20%;
 	}
 
 	@media (max-width: 650px) {
