@@ -91,10 +91,10 @@
 
 	.name {
 		display: block;
-		padding: 10px;
+		padding: 5px;
 		color: var(--acolor);
 		text-align: center;
-		font-size: 14px;
+		font-size: 0.8rem;
 		font-weight: bold;
 		text-transform: uppercase;
 	}

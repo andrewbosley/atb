@@ -26,12 +26,15 @@
 
 	let isOpen = $state(false);
 
-	let { links = [], menuPosition = {
-		top: '0px',
-		left: '0px',
-		bottom: '0px',
-		right: '0px'
-	} } = $props();
+	let {
+		links = [],
+		menuPosition = {
+			top: '0px',
+			left: '0px',
+			bottom: '0px',
+			right: '0px'
+		}
+	} = $props();
 	function toggleMenu() {
 		isOpen = !isOpen;
 	}

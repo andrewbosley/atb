@@ -14,7 +14,6 @@
 		--hcolor: #4a4a4a;
 		--ocolor: #ffffff;
 		--bcolor: #000000;
-		--acolor: #FF7F11;
 	}
 	:root[dataTheme='lightMode'] {
 		--pcolor: #f7f7f7;
@@ -22,10 +21,11 @@
 		--hcolor: #cccccc;
 		--ocolor: #000000;
 		--bcolor: #ffffff;
-		--acolor: #d5731e;
 	}
 	:global(body) {
-		--pfont: 'Montserrat Variable';
+		--acolor:#d5731e;
+		--ahcolor:#ff7f11;
+		--pfont: 'Montserrat Variable', sans-serif;
 		--sfont: 'Permanent Marker', cursive;
 		color: var(--ocolor);
 		background-color: var(--scolor);
