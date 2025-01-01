@@ -12,13 +12,14 @@
 -->
 
 <script lang="ts">
+	let { children } = $props();
 </script>
 
 <div class="circle">
 	<span></span>
 </div>
 <div class="content">
-	<slot></slot>
+	{@render children()}
 </div>
 
 <style>

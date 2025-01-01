@@ -15,7 +15,7 @@
 	import twitter from '$lib/images/Icons/x.svg';
 	import linkedin from '$lib/images/Icons/linkedin.svg';
 
-	let profileName = 'Socials';
+	let profileName = $state('Socials');
 	function nameDefault() {
 		profileName = 'Socials';
 	}
@@ -35,8 +35,8 @@
 	<div class="profiles">
 		<a
 			href="https://github.com/andrewbosley"
-			on:mouseenter={nameGithub}
-			on:mouseleave={nameDefault}
+			onmouseenter={nameGithub}
+			onmouseleave={nameDefault}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -44,8 +44,8 @@
 		</a>
 		<a
 			href="https://x.com/andrewtbosley"
-			on:mouseenter={nameTwitter}
-			on:mouseleave={nameDefault}
+			onmouseenter={nameTwitter}
+			onmouseleave={nameDefault}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -53,8 +53,8 @@
 		</a>
 		<a
 			href="https://www.linkedin.com/in/andrew-bosley/"
-			on:mouseenter={nameLinkedin}
-			on:mouseleave={nameDefault}
+			onmouseenter={nameLinkedin}
+			onmouseleave={nameDefault}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -91,10 +91,10 @@
 
 	.name {
 		display: block;
-		padding: 10px;
+		padding: 5px;
 		color: var(--acolor);
 		text-align: center;
-		font-size: 14px;
+		font-size: 0.8rem;
 		font-weight: bold;
 		text-transform: uppercase;
 	}

@@ -5,7 +5,7 @@
 	import SocialMedia from '$lib/socialButton.svelte';
 	import { onMount } from 'svelte';
 
-	let menuPosition = {};
+	let menuPosition = $state({});
 
 	function updateMenuPosition() {
 		if (window.innerWidth <= 650) {
@@ -58,11 +58,10 @@
 
 		<div class="content">
 			<div class="about">
-				<h1>Hello World!</h1>
-				<p>This is me.</p>
+				<h1>Hello World</h1>
 			</div>
 			<div class="me">
-				<enhanced:img src="$lib/images/me.jpg" alt="Me"> </enhanced:img>
+				<enhanced:img src="$lib/images/ATB.jpg" alt="ATB"> </enhanced:img>
 				<SocialMedia />
 			</div>
 		</div>
@@ -129,9 +128,10 @@
 	.navbar .name {
 		float: left;
 		color: var(--pcolor);
-		padding: 11px 0 0 30px;
-		font-size: 1.7rem;
-		letter-spacing: 5px;
+		font-family: var(--sfont);
+		padding: 7px 0 0 28px;
+		font-size: 2rem;
+		letter-spacing: 2px;
 		text-transform: uppercase;
 		font-weight: bold;
 	}
@@ -167,16 +167,10 @@
 	}
 
 	.about h1 {
-		font-size: 2.5rem;
+		font-size: 2.4rem;
 		color: var(--acolor);
 		margin-bottom: 25px;
-		font-weight: 700;
-	}
-
-	.about p {
-		font-size: 1.3rem;
-		color: var(--acolor);
-		font-weight: 400;
+		font-weight: 900;
 	}
 
 	.me {
@@ -207,8 +201,8 @@
 		}
 
 		.navbar .name {
-			padding: 10px 0 10px 26px;
-			font-size: 1.4rem;
+			padding: 12px 0 10px 28px;
+			font-size: 1.5rem;
 			letter-spacing: 2px;
 		}
 		.navbar .burgerMenu {
@@ -231,7 +225,7 @@
 		}
 
 		.about h1 {
-			margin-bottom: 35px;
+			margin: 15px;
 		}
 
 		.me {
@@ -239,7 +233,7 @@
 		}
 
 		.me img {
-			margin: 30px 0 0;
+			margin: 10px 0 0;
 		}
 	}
 

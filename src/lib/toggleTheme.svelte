@@ -15,7 +15,7 @@
 	import Light_mode from 'lucide-svelte/icons/sun';
 
 	// Get current theme from local storage or set to dark (default), then apply it.
-	let currentTheme = localStorage.getItem('theme') || 'darkMode';
+	let currentTheme = $state(localStorage.getItem('theme') || 'darkMode');
 	document.documentElement.setAttribute('dataTheme', currentTheme);
 
 	// Function to toggle between themes
@@ -26,7 +26,7 @@
 	};
 </script>
 
-<button class="toggle-button" aria-label="Toggle theme" on:click={toggleTheme}>
+<button class="toggle-button" aria-label="Toggle theme" onclick={toggleTheme}>
 	<div class="toggle-icon">
 		{#if currentTheme === 'lightMode'}
 			<Light_mode fill="var(--acolor)" size="18" />

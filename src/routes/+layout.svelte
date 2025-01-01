@@ -1,32 +1,38 @@
 <script lang="ts">
 	import '@master/normal.css';
 	import '@fontsource-variable/montserrat';
+	import '@fontsource/permanent-marker';
+	let { children } = $props();
 </script>
 
-<slot />
+{@render children()}
 
 <style>
 	:root[dataTheme='darkMode'] {
-		--pcolor: #1c1c1c;
+		--pcolor: #141414;
 		--scolor: #252525;
-		--hcolor: #444444;
+		--hcolor: #4a4a4a;
 		--ocolor: #ffffff;
 		--bcolor: #000000;
 	}
-
 	:root[dataTheme='lightMode'] {
-		--pcolor: #dddddd;
-		--scolor: #fcfcfc;
-		--hcolor: #b4b3b3;
+		--pcolor: #f7f7f7;
+		--scolor: #e4e4e4;
+		--hcolor: #cccccc;
 		--ocolor: #000000;
 		--bcolor: #ffffff;
 	}
 	:global(body) {
-		font-family: 'Montserrat Variable', sans-serif;
-		font-size: 20px;
-		font-weight: 400;
+		--acolor:#d5731e;
+		--ahcolor:#ff7f11;
+		--pfont: 'Montserrat Variable', sans-serif;
+		--sfont: 'Permanent Marker', cursive;
 		color: var(--ocolor);
 		background-color: var(--scolor);
-		--acolor: #d5731e;
+		font-family: var(--pfont);
+	}
+	:global(html) {
+		font-size: 16px;
+		font-weight: 400;
 	}
 </style>

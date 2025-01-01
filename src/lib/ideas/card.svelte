@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let card_title, card_desc, card_img, card_col;
 	import Link from '$lib/ideas/roundButton.svelte';
+	let { card_title, card_desc, card_img, card_col } = $props();
 </script>
 
 <main>
