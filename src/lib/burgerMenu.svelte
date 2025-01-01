@@ -24,22 +24,21 @@
 	import MenuOpen from 'lucide-svelte/icons/square-menu';
 	import MenuClose from 'lucide-svelte/icons/square-x';
 
-	export let links = [];
-	let isOpen = false;
+	let isOpen = $state(false);
 
-	export let menuPosition = {
+	let { links = [], menuPosition = {
 		top: '0px',
 		left: '0px',
 		bottom: '0px',
 		right: '0px'
-	};
+	} } = $props();
 	function toggleMenu() {
 		isOpen = !isOpen;
 	}
 </script>
 
 <div>
-	<button on:click={toggleMenu}>
+	<button onclick={toggleMenu}>
 		{#if isOpen == false}
 			<MenuOpen size="100%" />
 		{:else}

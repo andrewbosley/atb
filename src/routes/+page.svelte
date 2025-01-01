@@ -5,7 +5,7 @@
 	import SocialMedia from '$lib/socialButton.svelte';
 	import { onMount } from 'svelte';
 
-	let menuPosition = {};
+	let menuPosition = $state({});
 
 	function updateMenuPosition() {
 		if (window.innerWidth <= 650) {
@@ -58,8 +58,7 @@
 
 		<div class="content">
 			<div class="about">
-				<h1>Hello World!</h1>
-				<p>This is me.</p>
+				<h1>Hello World</h1>
 			</div>
 			<div class="me">
 				<enhanced:img src="$lib/images/me.jpg" alt="Me"> </enhanced:img>
@@ -129,6 +128,7 @@
 	.navbar .name {
 		float: left;
 		color: var(--pcolor);
+		font-family: var(--sfont);
 		padding: 11px 0 0 30px;
 		font-size: 1.7rem;
 		letter-spacing: 5px;
@@ -171,12 +171,6 @@
 		color: var(--acolor);
 		margin-bottom: 25px;
 		font-weight: 700;
-	}
-
-	.about p {
-		font-size: 1.3rem;
-		color: var(--acolor);
-		font-weight: 400;
 	}
 
 	.me {

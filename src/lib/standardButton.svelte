@@ -9,12 +9,11 @@
 -->
 
 <script lang="ts">
-	export let href = '#';
-	export let target = '_self';
+	let { href = '#', target = '_self', children } = $props();
 </script>
 
 <a {href} {target} class="button">
-	<span><slot /></span>
+	<span>{@render children()}</span>
 </a>
 
 <style>
