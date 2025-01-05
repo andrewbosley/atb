@@ -10,21 +10,21 @@
 <style>
 	:root[dataTheme='darkMode'] {
 		--pcolor: #141414;
-		--scolor: #252525;
+		--scolor: #242424;
 		--hcolor: #4a4a4a;
 		--ocolor: #ffffff;
 		--bcolor: #000000;
 	}
 	:root[dataTheme='lightMode'] {
 		--pcolor: #f7f7f7;
-		--scolor: #e4e4e4;
+		--scolor: #ededed;
 		--hcolor: #cccccc;
 		--ocolor: #000000;
 		--bcolor: #ffffff;
 	}
 	:global(body) {
-		--acolor:#d5731e;
-		--ahcolor:#ff7f11;
+		--acolor: #d5731e;
+		--ahcolor: #ff7f11;
 		--pfont: 'Montserrat Variable', sans-serif;
 		--sfont: 'Permanent Marker', cursive;
 		color: var(--ocolor);
@@ -36,3 +36,5 @@
 		font-weight: 400;
 	}
 </style>
+
+
