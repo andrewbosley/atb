@@ -1,8 +1,12 @@
 <script lang="ts">
-	let inputValue = '';
+	let inputValue = $state('');
 </script>
 
-<input type="text" class="text" />
+<input type="text" class="text" bind:value={inputValue} placeholder="Search..." />
+
+{#if inputValue}
+	<p>Searching for: {inputValue}</p>
+{/if}
 
 <style>
 	.text {
@@ -10,5 +14,6 @@
 		border-radius: 25px;
 		width: 450px;
 		padding: 10px;
+		border: none;
 	}
 </style>

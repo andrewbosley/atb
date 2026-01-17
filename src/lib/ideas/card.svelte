@@ -6,7 +6,7 @@
 <main>
 	<div class="card-container">
 		<div class="card" style="background-color:{card_col}">
-			<img src={card_img} alt="My product" />
+			<img src={card_img} alt="My product" loading="lazy" />
 			<div class="card-body">
 				<div class="card-title">
 					<h2>{card_title}</h2>

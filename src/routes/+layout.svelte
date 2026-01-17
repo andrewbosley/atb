@@ -24,7 +24,6 @@
 	}
 	:global(body) {
 		--acolor: #d5731e;
-		--ahcolor: #ff7f11;
 		--pfont: 'Montserrat Variable', sans-serif;
 		--sfont: 'Permanent Marker', cursive;
 		color: var(--ocolor);

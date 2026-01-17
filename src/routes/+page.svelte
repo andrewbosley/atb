@@ -3,34 +3,17 @@
 	import ThemeToggle from '$lib/toggleTheme.svelte';
 	import BurgerMenu from '$lib/burgerMenu.svelte';
 	import SocialMedia from '$lib/socialButton.svelte';
-	import { onMount } from 'svelte';
 
-	let menuPosition = $state({});
+	let screenWidth = $state(0);
 
-	function updateMenuPosition() {
-		if (window.innerWidth <= 650) {
-			menuPosition = {
-				top: '30px',
-				right: '0px',
-				left: '-200px',
-				bottom: '-370px'
-			};
-		} else {
-			menuPosition = {
-				top: '55px',
-				right: '0px',
-				left: '300px',
-				bottom: '-300px'
-			};
-		}
-	}
-
-	onMount(() => {
-		updateMenuPosition();
-		window.addEventListener('resize', updateMenuPosition);
-		return () => window.removeEventListener('resize', updateMenuPosition);
-	});
+	let menuPosition = $derived(
+		screenWidth <= 650
+			? { top: '30px', right: '0px', left: '-200px', bottom: '-410px' }
+			: { top: '55px', right: '0px', left: '300px', bottom: '-300px' }
+	);
 </script>
+
+<svelte:window bind:innerWidth={screenWidth} />
 
 <div class="themeToggle">
 	<ThemeToggle />
@@ -42,13 +25,13 @@
 			<span class="name">Andrew Bosley</span>
 			<div class="Balloon">
 				<!-- <a href="/Balloon" target="_self"> -->
-				<img src={balloon} alt="balloon" />
+				<img src={balloon} alt="balloon" loading="lazy" />
 				<!-- </a> -->
 			</div>
 			<div class="burgerMenu">
 				<BurgerMenu
 					links={[
-						{ url: '/ideas', text: 'Ideas' },
+						{ url: '/examples', text: 'Examples' },
 						{ url: '/error', text: 'Error' }
 					]}
 					{menuPosition}
@@ -61,7 +44,8 @@
 				<h1>Hello World</h1>
 			</div>
 			<div class="me">
-				<enhanced:img src="$lib/images/ATB.jpg" alt="ATB"> </enhanced:img>
+				<enhanced:img src="$lib/images/ATB.jpg" alt="ATB" class="profile">
+				</enhanced:img>
 				<SocialMedia />
 			</div>
 		</div>
@@ -145,8 +129,8 @@
 		visibility: hidden;
 	}
 
-	.navbar .burgerMenu:hover {
-		color: var(--hcolor);
+	.navbar .burgerMenu :global(button:hover) {
+		color: var(--ocolor);
 	}
 
 	.content {
@@ -183,7 +167,7 @@
 		text-align: center;
 	}
 
-	.me img {
+	.profile {
 		width: 200px;
 		height: 200px;
 		padding: 20px;
@@ -208,7 +192,7 @@
 		.navbar .burgerMenu {
 			float: unset;
 			position: absolute;
-			top: 45px;
+			top: 52px;
 			right: 0px;
 			width: 30px;
 			height: 30px;
@@ -232,7 +216,7 @@
 			width: 100%;
 		}
 
-		.me img {
+		.profile {
 			margin: 10px 0 0;
 		}
 	}

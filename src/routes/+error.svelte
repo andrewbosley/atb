@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SwirlCircle from '$lib/swirlCircle.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import ThemeToggle from '$lib/toggleTheme.svelte';
 	import Button from '$lib/standardButton.svelte';
 
@@ -40,9 +40,9 @@
 </script>
 
 <div class="container">
-	{#each bgerrors as bgerror}
+	{#each bgerrors as bgerror (bgerror.id)}
 		<div class="random-div" style="top: {bgerror.top}; left: {bgerror.left};" data-id={bgerror.id}>
-			{$page.status}
+			{page.status}
 		</div>
 	{/each}
 
@@ -52,8 +52,8 @@
 
 	<div class="circle">
 		<SwirlCircle>
-			<h1>{$page.status}</h1>
-			<h2>{$page?.error?.message}</h2>
+			<h1>{page.status}</h1>
+			<h2>{page?.error?.message}</h2>
 		</SwirlCircle>
 	</div>
 	<Button href="/">Return Home</Button>

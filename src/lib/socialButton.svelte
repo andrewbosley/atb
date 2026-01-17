@@ -40,7 +40,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<img src={github} alt="GitHub" class="icon" />
+			<img src={github} alt="GitHub" class="icon" loading="lazy" />
 		</a>
 		<a
 			href="https://x.com/andrewtbosley"
@@ -49,16 +49,16 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<img src={twitter} alt="Twitter" class="icon" />
+			<img src={twitter} alt="Twitter" class="icon" loading="lazy" />
 		</a>
 		<a
-			href="https://www.linkedin.com/in/andrew-bosley/"
+			href="https://www.linkedin.com/in/andrew-bosley"
 			onmouseenter={nameLinkedin}
 			onmouseleave={nameDefault}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<img src={linkedin} alt="LinkedIn" class="icon" />
+			<img src={linkedin} alt="LinkedIn" class="icon" loading="lazy" />
 		</a>
 	</div>
 </div>

@@ -1,13 +1,16 @@
 <script lang="ts">
-	export let href = '#';
-	export let target = '_self';
-	export let type: 'outline' | 'solid' = 'solid';
-	export let color: 'white' | 'black' | 'orange' = 'orange';
+	let {
+		children,
+		href = '#',
+		target = '_self',
+		type = 'solid' as 'outline' | 'solid',
+		color = 'orange' as 'white' | 'black' | 'orange'
+	} = $props();
 </script>
 
 <a {href} {target}>
 	<button class="{type} {color}">
-		<slot />
+		{@render children?.()}
 	</button>
 </a>
 
@@ -29,7 +32,7 @@
 		background: transparent;
 	}
 
-	//Orange
+	/* Orange */
 
 	button.solid.orange {
 		background: var(--Orange);
@@ -55,7 +58,7 @@
 		box-shadow: 0 0 20px var(--Orange);
 	}
 
-	//Black
+	/* Black */
 
 	button.solid.black {
 		background: var(--Black);
@@ -81,7 +84,7 @@
 		box-shadow: 0 0 20px var(--Black);
 	}
 
-	//White
+	/* White */
 
 	button.solid.white {
 		background: var(--White);

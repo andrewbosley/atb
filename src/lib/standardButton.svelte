@@ -9,6 +9,7 @@
 -->
 
 <script lang="ts">
+	/* eslint-disable svelte/no-navigation-without-resolve */
 	let { href = '#', target = '_self', children } = $props();
 </script>
 

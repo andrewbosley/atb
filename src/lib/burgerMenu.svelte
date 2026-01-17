@@ -5,17 +5,17 @@
 	```
 	import BurgerMenu from '$lib/burgerMenu.svelte';
 
-  <BurgerMenu
-    links={[
-      { url: '/examples', text: 'Examples' },
-    ]}
-    menuPosition={{
-      top: '10px',
-      right: '10px',
-      left: '10px',
-      bottom: '10px'
-    }}
-  />
+<BurgerMenu
+links={[
+	{ url: '/examples', text: 'Examples' },
+]}
+menuPosition={{
+	top: '10px',
+	right: '10px',
+	left: '10px',
+	bottom: '10px'
+}}
+/>
 
 	```
 -->
@@ -23,6 +23,8 @@
 <script lang="ts">
 	import MenuOpen from 'lucide-svelte/icons/square-menu';
 	import MenuClose from 'lucide-svelte/icons/square-x';
+	import { resolve } from '$app/paths';
+	import { slide } from 'svelte/transition';
 
 	let isOpen = $state(false);
 
@@ -41,24 +43,30 @@
 </script>
 
 <div>
-	<button onclick={toggleMenu}>
-		{#if isOpen == false}
+	<button onclick={toggleMenu} aria-expanded={isOpen} aria-label="Toggle navigation menu">
+		{#if !isOpen}
 			<MenuOpen size="100%" />
 		{:else}
 			<MenuClose size="100%" />
 		{/if}
 	</button>
-	<div
-		class="menuContainer"
-		class:menuOpen={isOpen}
-		style="top:{menuPosition.top};right:{menuPosition.right};left:{menuPosition.left};bottom:{menuPosition.bottom};"
-	>
-		<ul>
-			{#each links as link}
-				<li><a href={link.url}>{link.text}</a></li>
-			{/each}
-		</ul>
-	</div>
+
+	{#if isOpen}
+		<div
+			transition:slide={{ duration: 200 }}
+			class="menuContainer"
+			style:top={menuPosition.top}
+			style:right={menuPosition.right}
+			style:left={menuPosition.left}
+			style:bottom={menuPosition.bottom}
+		>
+			<ul>
+				{#each links as link (link.text)}
+					<li><a href={resolve(link.url)} onclick={toggleMenu}>{link.text}</a></li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -67,7 +75,6 @@
 	}
 
 	.menuContainer {
-		visibility: hidden;
 		background-color: var(--pcolor);
 		border-radius: 8px 0 0 8px;
 		color: var(--acolor);
@@ -80,10 +87,6 @@
 	}
 
 	.menuContainer a:hover {
-		color: var(--hcolor);
-	}
-
-	.menuOpen {
-		visibility: visible;
+		color: var(--ocolor);
 	}
 </style>

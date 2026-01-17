@@ -16,13 +16,15 @@
 
 	// Get current theme from local storage or set to dark (default), then apply it.
 	let currentTheme = $state(localStorage.getItem('theme') || 'darkMode');
-	document.documentElement.setAttribute('dataTheme', currentTheme);
+
+	$effect(() => {
+		document.documentElement.setAttribute('dataTheme', currentTheme);
+		localStorage.setItem('theme', currentTheme);
+	});
 
 	// Function to toggle between themes
 	const toggleTheme = () => {
 		currentTheme = currentTheme === 'darkMode' ? 'lightMode' : 'darkMode';
-		localStorage.setItem('theme', currentTheme);
-		document.documentElement.setAttribute('dataTheme', currentTheme);
 	};
 </script>
 
