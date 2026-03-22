@@ -2,6 +2,7 @@
 	import ThemeSelector from '$lib/themeSelector.svelte';
 	import Button from '$lib/standardButton.svelte';
 	import Search from '$lib/ideas/search.svelte';
+	import Glass from '$lib/glass.svelte';
 </script>
 
 <div class="themeSelector">
@@ -19,6 +20,29 @@
 	</div>
 </div>
 
+<div class="container">
+	<div class="glass">
+		<Glass radius="" tintColor="" tintOpacity="">
+			<p>Default glass</p>
+		</Glass>
+	</div>
+	<div class="glass">
+		<Glass radius="0px" tintColor="" tintOpacity="">
+			<p>Radius glass (0px)</p>
+		</Glass>
+	</div>
+	<div class="glass">
+		<Glass radius="" tintColor="var(--acolor)" tintOpacity="">
+			<p>Tint color glass (acolor)</p>
+		</Glass>
+	</div>
+	<div class="glass">
+		<Glass radius="" tintColor="" tintOpacity="0.8">
+			<p>Tint opacity glass (0.8)</p>
+		</Glass>
+	</div>
+</div>
+
 <div class="other">
 	<Search />
 	<div class="button"><Button href="/">Button</Button></div>
@@ -26,8 +50,9 @@
 
 <style>
 	.button {
-		padding: 10px;
+		padding: 40px;
 	}
+
 	.themeSelector {
 		padding: 10px;
 		position: absolute;
@@ -41,12 +66,14 @@
 		align-items: center;
 		justify-content: center;
 	}
+
 	.container {
 		display: flex;
 		flex-wrap: wrap;
 		max-width: 100%;
-		padding: 50px;
+		padding: 30px 10px 0px 10px;
 	}
+
 	.card {
 		height: 250px;
 		margin: 20px;
@@ -61,23 +88,40 @@
 		flex-basis: calc(50%);
 	}
 
-	.a {
+	.card.a {
 		background: var(--pcolor);
 	}
-	.b {
+	.card.b {
 		background: var(--scolor);
 	}
-	.c {
+	.card.c {
 		background: var(--hcolor);
 	}
-	.d {
+	.card.d {
 		background: var(--acolor);
 	}
-	.e {
+	.card .card2.e {
 		background: var(--bcolor);
 	}
-	.f {
+	.card .card2.f {
 		background: var(--ocolor);
 		color: var(--bcolor);
+	}
+
+	.glass {
+		height: 250px;
+		margin: 20px;
+		flex-basis: calc(25% - 40px);
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 100%;
+	}
+
+	.other {
+		padding: 30px 10px 0px 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 </style>
