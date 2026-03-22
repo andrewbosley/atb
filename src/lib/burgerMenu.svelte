@@ -5,17 +5,17 @@
 	```
 	import BurgerMenu from '$lib/burgerMenu.svelte';
 
-<BurgerMenu
-links={[
-	{ url: '/examples', text: 'Examples' },
-]}
-menuPosition={{
-	top: '10px',
-	right: '10px',
-	left: '10px',
-	bottom: '10px'
-}}
-/>
+	<BurgerMenu
+	links={[
+		{ url: '/examples', text: 'Examples' },
+	]}
+	menuPosition={{
+		top: '10px',
+		right: '10px',
+		left: '10px',
+		bottom: '10px'
+	}}
+	/>
 
 	```
 -->

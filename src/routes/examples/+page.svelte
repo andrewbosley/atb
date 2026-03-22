@@ -1,11 +1,11 @@
 <script lang="ts">
-	import ThemeToggle from '$lib/toggleTheme.svelte';
+	import ThemeSelector from '$lib/themeSelector.svelte';
 	import Button from '$lib/standardButton.svelte';
 	import Search from '$lib/ideas/search.svelte';
 </script>
 
-<div class="themeToggle">
-	<ThemeToggle />
+<div class="themeSelector">
+	<ThemeSelector />
 </div>
 
 <div class="container">
@@ -28,7 +28,7 @@
 	.button {
 		padding: 10px;
 	}
-	.themeToggle {
+	.themeSelector {
 		padding: 10px;
 		position: absolute;
 		top: 0;

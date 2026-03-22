@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SwirlCircle from '$lib/swirlCircle.svelte';
 	import { page } from '$app/state';
-	import ThemeToggle from '$lib/toggleTheme.svelte';
+	import ThemeSelector from '$lib/themeSelector.svelte';
 	import Button from '$lib/standardButton.svelte';
 
 	// Change number of BG status codes based on screen width.
@@ -46,8 +46,8 @@
 		</div>
 	{/each}
 
-	<div class="themeToggle">
-		<ThemeToggle />
+	<div class="themeSelector">
+		<ThemeSelector />
 	</div>
 
 	<div class="circle">
@@ -60,7 +60,7 @@
 </div>
 
 <style>
-	.themeToggle {
+	.themeSelector {
 		padding: 10px;
 		position: absolute;
 		top: 0;

@@ -9,7 +9,7 @@
 
 <style>
 	:root[dataTheme='darkMode'] {
-		--pcolor: #141414;
+		--pcolor: #171717;
 		--scolor: #242424;
 		--hcolor: #4a4a4a;
 		--ocolor: #ffffff;
@@ -17,7 +17,7 @@
 	}
 	:root[dataTheme='lightMode'] {
 		--pcolor: #f7f7f7;
-		--scolor: #ededed;
+		--scolor: #eaeaea;
 		--hcolor: #cccccc;
 		--ocolor: #000000;
 		--bcolor: #ffffff;
@@ -29,6 +29,8 @@
 		color: var(--ocolor);
 		background-color: var(--scolor);
 		font-family: var(--pfont);
+		background-image: linear-gradient(to top, var(--acolor) -150%, var(--scolor) 75%);
+		background-attachment: fixed;
 	}
 	:global(html) {
 		font-size: 16px;

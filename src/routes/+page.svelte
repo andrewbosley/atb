@@ -1,6 +1,6 @@
 <script lang="ts">
 	import balloon from '$lib/images/balloon.png';
-	import ThemeToggle from '$lib/toggleTheme.svelte';
+	import ThemeSelector from '$lib/themeSelector.svelte';
 	import BurgerMenu from '$lib/burgerMenu.svelte';
 	import SocialMedia from '$lib/socialButton.svelte';
 
@@ -15,8 +15,8 @@
 
 <svelte:window bind:innerWidth={screenWidth} />
 
-<div class="themeToggle">
-	<ThemeToggle />
+<div class="themeSelector">
+	<ThemeSelector />
 </div>
 
 <main>
@@ -44,8 +44,7 @@
 				<h1>Hello World</h1>
 			</div>
 			<div class="me">
-				<enhanced:img src="$lib/images/ATB.jpg" alt="ATB" class="profile">
-				</enhanced:img>
+				<enhanced:img src="$lib/images/ATB.jpg" alt="ATB" class="profile"> </enhanced:img>
 				<SocialMedia />
 			</div>
 		</div>
@@ -62,7 +61,7 @@
 		width: 100vw;
 	}
 
-	.themeToggle {
+	.themeSelector {
 		position: absolute;
 		top: 10px;
 		right: 10px;
