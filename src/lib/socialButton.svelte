@@ -15,9 +15,9 @@
 	const twitterLoader = () => import('$lib/images/Icons/x.svg?raw');
 	const linkedinLoader = () => import('$lib/images/Icons/linkedin.svg?raw');
 
-	let profileName = $state('Socials');
+	let profileName = $state('─────');
 	function nameDefault() {
-		profileName = 'Socials';
+		profileName = '─────';
 	}
 	function nameGithub() {
 		profileName = 'GitHub';
@@ -26,7 +26,7 @@
 		profileName = 'Twitter';
 	}
 	function nameLinkedin() {
-		profileName = 'Linkedin';
+		profileName = 'LinkedIn';
 	}
 
 	function lazyIcon(node: HTMLElement, loader: () => Promise<{ default: string }>) {
@@ -114,17 +114,24 @@
 	}
 
 	.profiles a:hover .icon {
-		border-radius: 25%;
+		border-radius: 50%;
 		background-color: var(--scolor);
 	}
 
 	.name {
-		display: block;
-		padding: 5px;
+		height: 28px;
+		line-height: 28px;
+		padding: 0;
 		color: var(--acolor);
 		text-align: center;
 		font-size: 0.8rem;
 		font-weight: bold;
 		text-transform: uppercase;
+		visibility: hidden;
+		transition: opacity 1s ease;
+	}
+
+	.name:not(:empty) {
+		visibility: visible;
 	}
 </style>

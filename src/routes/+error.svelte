@@ -2,7 +2,7 @@
 	import SwirlCircle from '$lib/swirlCircle.svelte';
 	import { page } from '$app/state';
 	import ThemeSelector from '$lib/themeSelector.svelte';
-	import Button from '$lib/standardButton.svelte';
+	import Button from '$lib/ideas/standardButton.svelte';
 
 	// Change number of BG status codes based on screen width.
 	// Get screen width
@@ -38,6 +38,10 @@
 		});
 	}
 </script>
+
+<svelte:head>
+	<title>{page.status} | ATB</title>
+</svelte:head>
 
 <div class="container">
 	{#each bgerrors as bgerror (bgerror.id)}

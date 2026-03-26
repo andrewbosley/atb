@@ -1,92 +1,192 @@
 <!--
 	@component
-	Burger menu for navigation menu.
+	Fullscreen split-reveal navigation menu.
 
 	```
 	import BurgerMenu from '$lib/burgerMenu.svelte';
 
 	<BurgerMenu
-	links={[
-		{ url: '/examples', text: 'Examples' },
-	]}
-	menuPosition={{
-		top: '10px',
-		right: '10px',
-		left: '10px',
-		bottom: '10px'
-	}}
+		links={[
+			{ url: '/examples', text: 'Examples' },
+		]}
 	/>
-
 	```
 -->
 
 <script lang="ts">
-	import MenuOpen from 'lucide-svelte/icons/square-menu';
-	import MenuClose from 'lucide-svelte/icons/square-x';
+	import MenuIcon from 'lucide-svelte/icons/menu';
+	import XIcon from 'lucide-svelte/icons/x';
 	import { resolve } from '$app/paths';
-	import { slide } from 'svelte/transition';
 
 	let isOpen = $state(false);
 
 	let {
-		links = [],
-		menuPosition = {
-			top: '0px',
-			left: '0px',
-			bottom: '0px',
-			right: '0px'
-		}
+		links = [
+			{ url: '/examples', text: 'Examples' },
+			{ url: '/error', text: 'Error' }
+		]
 	} = $props();
-	function toggleMenu() {
-		isOpen = !isOpen;
-	}
+
+	const toggle = () => (isOpen = !isOpen);
 </script>
 
-<div>
-	<button onclick={toggleMenu} aria-expanded={isOpen} aria-label="Toggle navigation menu">
-		{#if !isOpen}
-			<MenuOpen size="100%" />
+<button class="burger-button" aria-label="Toggle menu" onclick={toggle}>
+	<div class="burger-icon">
+		{#if isOpen}
+			<XIcon size="18" />
 		{:else}
-			<MenuClose size="100%" />
+			<MenuIcon size="18" />
 		{/if}
-	</button>
+	</div>
+</button>
 
-	{#if isOpen}
-		<div
-			transition:slide={{ duration: 200 }}
-			class="menuContainer"
-			style:top={menuPosition.top}
-			style:right={menuPosition.right}
-			style:left={menuPosition.left}
-			style:bottom={menuPosition.bottom}
-		>
-			<ul>
-				{#each links as link (link.text)}
-					<li><a href={resolve(link.url)} onclick={toggleMenu}>{link.text}</a></li>
-				{/each}
-			</ul>
-		</div>
-	{/if}
-</div>
+<div class="overlay" class:open={isOpen}></div>
+
+<nav class="menu-links" class:open={isOpen}>
+	{#each links as link, i (link.url)}
+		{#if i > 0}<div class="divider"></div>{/if}
+		<a href={resolve(link.url)}>{link.text}</a>
+	{/each}
+</nav>
 
 <style>
-	button {
+	.burger-button {
 		cursor: pointer;
-	}
-
-	.menuContainer {
-		background-color: var(--pcolor);
-		border-radius: 8px 0 0 8px;
+		position: relative;
+		z-index: 101;
+		width: 28px;
+		height: 28px;
+		border: 2px solid;
+		border-radius: 25px;
 		color: var(--acolor);
-		padding: 30px;
-		position: absolute;
-		font-size: 1.6em;
-		text-align: right;
-		z-index: 100;
-		font-weight: 700;
+		background-color: var(--acolor);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		overflow: hidden;
+		animation: heartbeat 18s ease-in-out infinite;
 	}
 
-	.menuContainer a:hover {
-		color: var(--ocolor);
+	@keyframes heartbeat {
+		0% {
+			transform: scale(1);
+		}
+		1.7% {
+			transform: scale(1.3);
+		}
+		2.8% {
+			transform: scale(1);
+		}
+		4% {
+			transform: scale(1.2);
+		}
+		5% {
+			transform: scale(1);
+		}
+		6.7% {
+			transform: translateX(-3px);
+		}
+		7.2% {
+			transform: translateX(3px);
+		}
+		7.7% {
+			transform: translateX(-2px);
+		}
+		8.2% {
+			transform: translateX(2px);
+		}
+		8.7% {
+			transform: translateX(0);
+		}
+		9%,
+		10% {
+			transform: scale(1);
+		}
+	}
+
+	.burger-button:hover {
+		filter: brightness(1.2);
+	}
+
+	.burger-icon {
+		width: 24px;
+		height: 24px;
+		top: 0px;
+		left: 0px;
+		border-radius: 50%;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--scolor);
+	}
+
+	.overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 99;
+		background-color: var(--pcolor);
+		transform: translateY(-100%);
+		transition: transform 0.8s ease 0.2s;
+		pointer-events: none;
+	}
+
+	.overlay.open {
+		transform: translateY(0);
+		transition: transform 1s ease;
+		pointer-events: auto;
+	}
+
+	.menu-links {
+		position: fixed;
+		inset: 0;
+		z-index: 100;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+		pointer-events: none;
+	}
+
+	.menu-links.open {
+		pointer-events: auto;
+	}
+
+	.menu-links a {
+		color: var(--acolor);
+		text-decoration: none;
+		font-size: 2rem;
+		opacity: 0;
+		transform: translateY(20px);
+		transition:
+			opacity 0.25s ease,
+			transform 0.25s ease;
+	}
+
+	.menu-links.open a {
+		opacity: 1;
+		transform: translateY(0);
+		transition:
+			opacity 0.4s ease 0.5s,
+			transform 0.4s ease 0.5s;
+	}
+
+	.menu-links a:hover {
+		filter: brightness(1.3);
+	}
+
+	.divider {
+		width: 50px;
+		height: 2px;
+		background-color: var(--ocolor);
+		opacity: 0;
+		transition: opacity 0.25s ease;
+	}
+
+	.menu-links.open .divider {
+		opacity: 0.9;
+		transition: opacity 0.4s ease 0.5s;
 	}
 </style>

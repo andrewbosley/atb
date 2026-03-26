@@ -16,4 +16,9 @@
 		padding: 10px;
 		border: none;
 	}
+
+	:global(input:focus, input[type='search']:focus, textarea:focus, select:focus) {
+		box-shadow: 0 0 6px rgba(0, 0, 0, 0.15) !important;
+		outline: none !important;
+	}
 </style>

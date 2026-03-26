@@ -5,9 +5,21 @@
 	let { children } = $props();
 </script>
 
+<svelte:head>
+	<meta
+		name="description"
+		content="devops by day, rabbit holes by night. runs on pepsi max, sg1 rewatch #7. once finished a side project."
+	/>
+	<meta name="author" content="Andrew Bosley" />
+	<meta property="og:site_name" content="Andrew Bosley" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="en_GB" />
+</svelte:head>
+
 {@render children()}
 
 <style>
+	/* Dark Theme */
 	:root[dataTheme='darkMode'] {
 		--pcolor: #171717;
 		--scolor: #242424;
@@ -15,30 +27,34 @@
 		--ocolor: #ffffff;
 		--bcolor: #000000;
 	}
+	/* Light Theme */
 	:root[dataTheme='lightMode'] {
-		--pcolor: #f7f7f7;
+		--pcolor: #f4f4f4;
 		--scolor: #eaeaea;
 		--hcolor: #cccccc;
 		--ocolor: #000000;
 		--bcolor: #ffffff;
 	}
+	/* General Theming */
 	:global(body) {
 		--acolor: #d5731e;
 		--pfont: 'Montserrat Variable', sans-serif;
 		--sfont: 'Permanent Marker', cursive;
 		color: var(--ocolor);
-		background-color: var(--scolor);
 		font-family: var(--pfont);
-		background-image: linear-gradient(to top, var(--acolor) -150%, var(--scolor) 75%);
-		background-attachment: fixed;
+		background-color: var(--scolor);
 	}
+
+	:global(:root[dataTheme='darkMode']) :global(body) {
+		background: linear-gradient(to top, var(--acolor) -150%, var(--scolor) 75%);
+	}
+
+	:global(:root[dataTheme='lightMode']) :global(body) {
+		background: linear-gradient(to top, var(--acolor) -40%, var(--scolor) 75%);
+	}
+
 	:global(html) {
 		font-size: 16px;
 		font-weight: 400;
-	}
-
-	:global(input:focus, input[type='search']:focus, textarea:focus, select:focus) {
-		box-shadow: 0 0 6px rgba(0, 0, 0, 0.15) !important;
-		outline: none !important;
 	}
 </style>
