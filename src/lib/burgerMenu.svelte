@@ -1,6 +1,6 @@
 <!--
 	@component
-	Fullscreen split-reveal navigation menu.
+	Fullscreen navigation menu.
 
 	```
 	import BurgerMenu from '$lib/burgerMenu.svelte';
@@ -23,7 +23,8 @@
 	let {
 		links = [
 			{ url: '/examples', text: 'Examples' },
-			{ url: '/error', text: 'Error' }
+			{ url: '/error', text: 'Error' },
+			{ url: '/balloon', text: 'Balloon' }
 		]
 	} = $props();
 
@@ -158,6 +159,9 @@
 		color: var(--acolor);
 		text-decoration: none;
 		font-size: 2rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
 		opacity: 0;
 		transform: translateY(20px);
 		transition:
@@ -175,11 +179,14 @@
 
 	.menu-links a:hover {
 		filter: brightness(1.3);
+		letter-spacing: 0.25em;
+		transition: all 0.3s ease;
 	}
 
 	.divider {
 		width: 50px;
 		height: 2px;
+		margin: 15px auto;
 		background-color: var(--ocolor);
 		opacity: 0;
 		transition: opacity 0.25s ease;

@@ -24,14 +24,14 @@
 
 <main>
 	<div class="container">
-		<nav class="navbar">
+		<header class="nameplate" aria-label="Site identity">
 			<span class="name">Andrew Bosley</span>
 			<div class="Balloon">
 				<!-- <a href="/Balloon" class="BalloonLink" aria-label="Balloon page"> -->
 				<Balloon size="40" aria-label="balloon" />
 				<!-- </a> -->
 			</div>
-		</nav>
+		</header>
 
 		<div class="content">
 			<div class="me">
@@ -88,7 +88,7 @@
 		background: var(--pcolor);
 	}
 
-	.navbar {
+	.nameplate {
 		width: 415px;
 		height: 50px;
 		background: var(--acolor);
@@ -100,7 +100,7 @@
 		align-items: center;
 	}
 
-	.navbar::after {
+	.nameplate::after {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -129,7 +129,7 @@
 		fill: var(--acolor);
 	}
 
-	.navbar .name {
+	.nameplate .name {
 		color: var(--pcolor);
 		font-family: var(--sfont);
 		font-size: 2.2rem;
@@ -179,11 +179,11 @@
 			padding: 10px 0;
 		}
 
-		.navbar {
+		.nameplate {
 			width: 265px;
 		}
 
-		.navbar .name {
+		.nameplate .name {
 			font-size: 1.5rem;
 			letter-spacing: 2px;
 			margin: 0 0 0 13px;

@@ -14,6 +14,7 @@
 	const githubLoader = () => import('$lib/images/Icons/github.svg?raw');
 	const twitterLoader = () => import('$lib/images/Icons/x.svg?raw');
 	const linkedinLoader = () => import('$lib/images/Icons/linkedin.svg?raw');
+	const blueskyLoader = () => import('$lib/images/Icons/bluesky.svg?raw');
 
 	let profileName = $state('─────');
 	function nameDefault() {
@@ -27,6 +28,9 @@
 	}
 	function nameLinkedin() {
 		profileName = 'LinkedIn';
+	}
+	function nameBluesky() {
+		profileName = 'Bluesky';
 	}
 
 	function lazyIcon(node: HTMLElement, loader: () => Promise<{ default: string }>) {
@@ -62,16 +66,6 @@
 			<span use:lazyIcon={githubLoader} class="icon" aria-label="GitHub"></span>
 		</a>
 		<a
-			href="https://x.com/andrewtbosley"
-			onmouseenter={nameTwitter}
-			onmouseleave={nameDefault}
-			target="_blank"
-			rel="noopener noreferrer"
-			aria-label="Twitter"
-		>
-			<span use:lazyIcon={twitterLoader} class="icon" aria-label="Twitter"></span>
-		</a>
-		<a
 			href="https://www.linkedin.com/in/andrew-bosley"
 			onmouseenter={nameLinkedin}
 			onmouseleave={nameDefault}
@@ -80,6 +74,26 @@
 			aria-label="LinkedIn"
 		>
 			<span use:lazyIcon={linkedinLoader} class="icon" aria-label="LinkedIn"></span>
+		</a>
+		<a
+			href="https://bsky.app/profile/andrewtbosley.bsky.social"
+			onmouseenter={nameBluesky}
+			onmouseleave={nameDefault}
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="Bluesky"
+		>
+			<span use:lazyIcon={blueskyLoader} class="icon" aria-label="Bluesky"></span>
+		</a>
+		<a
+			href="https://x.com/andrewtbosley"
+			onmouseenter={nameTwitter}
+			onmouseleave={nameDefault}
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="Twitter"
+		>
+			<span use:lazyIcon={twitterLoader} class="icon" aria-label="Twitter"></span>
 		</a>
 	</div>
 </div>
