@@ -1,8 +1,8 @@
 <script lang="ts">
 	import SwirlCircle from '$lib/swirlCircle.svelte';
 	import { page } from '$app/state';
-	import ThemeToggle from '$lib/toggleTheme.svelte';
-	import Button from '$lib/standardButton.svelte';
+	import ThemeSelector from '$lib/themeSelector.svelte';
+	import Button from '$lib/ideas/standardButton.svelte';
 
 	// Change number of BG status codes based on screen width.
 	// Get screen width
@@ -39,6 +39,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{page.status} | ATB</title>
+</svelte:head>
+
 <div class="container">
 	{#each bgerrors as bgerror (bgerror.id)}
 		<div class="random-div" style="top: {bgerror.top}; left: {bgerror.left};" data-id={bgerror.id}>
@@ -46,8 +50,8 @@
 		</div>
 	{/each}
 
-	<div class="themeToggle">
-		<ThemeToggle />
+	<div class="themeSelector">
+		<ThemeSelector />
 	</div>
 
 	<div class="circle">
@@ -60,7 +64,7 @@
 </div>
 
 <style>
-	.themeToggle {
+	.themeSelector {
 		padding: 10px;
 		position: absolute;
 		top: 0;

@@ -1,53 +1,49 @@
 <script lang="ts">
-	import balloon from '$lib/images/balloon.png';
-	import ThemeToggle from '$lib/toggleTheme.svelte';
+	import { dev } from '$app/environment';
+	import Balloon from 'lucide-svelte/icons/balloon';
+	import ThemeSelector from '$lib/themeSelector.svelte';
 	import BurgerMenu from '$lib/burgerMenu.svelte';
 	import SocialMedia from '$lib/socialButton.svelte';
-
-	let screenWidth = $state(0);
-
-	let menuPosition = $derived(
-		screenWidth <= 650
-			? { top: '30px', right: '0px', left: '-200px', bottom: '-410px' }
-			: { top: '55px', right: '0px', left: '300px', bottom: '-300px' }
-	);
 </script>
 
-<svelte:window bind:innerWidth={screenWidth} />
+<svelte:head>
+	<title>Hello World | ATB</title>
+	<meta property="og:title" content="ATB" />
+	<meta property="og:url" content="https://andrewtbosley.com" />
+</svelte:head>
 
-<div class="themeToggle">
-	<ThemeToggle />
+{#if dev}
+	<div class="burgerMenu">
+		<BurgerMenu />
+	</div>
+{/if}
+
+<div class="themeSelector">
+	<ThemeSelector />
 </div>
 
 <main>
 	<div class="container">
-		<nav class="navbar">
+		<header class="nameplate" aria-label="Site identity">
 			<span class="name">Andrew Bosley</span>
 			<div class="Balloon">
-				<!-- <a href="/Balloon" target="_self"> -->
-				<img src={balloon} alt="balloon" loading="lazy" />
+				<!-- <a href="/Balloon" class="BalloonLink" aria-label="Balloon page"> -->
+				<Balloon size="40" aria-label="balloon" />
 				<!-- </a> -->
 			</div>
-			<div class="burgerMenu">
-				<BurgerMenu
-					links={[
-						{ url: '/examples', text: 'Examples' },
-						{ url: '/error', text: 'Error' }
-					]}
-					{menuPosition}
-				/>
-			</div>
-		</nav>
+		</header>
 
 		<div class="content">
-			<div class="about">
-				<h1>Hello World</h1>
-			</div>
 			<div class="me">
-				<enhanced:img src="$lib/images/ATB.jpg" alt="ATB" class="profile">
-				</enhanced:img>
-				<SocialMedia />
+				<enhanced:img src="$lib/images/ATB.jpg" alt="ATB" class="profile"> </enhanced:img>
 			</div>
+			<div class="about">
+				<p>
+					devops by day, rabbit holes by night.<br />runs on pepsi max, sg1 rewatch #7.<br />once
+					finished a side project.
+				</p>
+			</div>
+			<SocialMedia />
 		</div>
 	</div>
 </main>
@@ -58,44 +54,60 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		min-height: 100vh;
 		width: 100vw;
 	}
 
-	.themeToggle {
+	.burgerMenu {
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		width: 28px;
+		height: 28px;
+		z-index: 1000;
+	}
+
+	.themeSelector {
 		position: absolute;
 		top: 10px;
 		right: 10px;
 	}
 
 	.container {
+		display: flex;
 		position: relative;
-		width: 500px;
-		height: 400px;
-		background-color: var(--pcolor);
+		width: 400px;
+		height: auto;
 		align-items: center;
 		justify-content: center;
-		border-radius: 15px;
+		overflow: visible;
+		box-shadow:
+			0 26px 60px -12px rgba(0, 0, 0, 0.36),
+			0 14px 28px -10px rgba(0, 0, 0, 0.18),
+			0 6px 14px rgba(0, 0, 0, 0.08);
+		background: var(--pcolor);
 	}
 
-	.navbar {
-		width: 520px;
+	.nameplate {
+		width: 415px;
+		height: 50px;
 		background: var(--acolor);
 		position: absolute;
 		top: 20px;
-		left: -20px;
-		border-radius: 15px 0 0 15px;
+		left: -15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
-	.navbar::after {
+	.nameplate::after {
 		content: '';
 		position: absolute;
 		top: 0;
 		height: 100%;
 		background-color: var(--acolor);
-		width: 20px;
-		right: -19px;
-		border-radius: 0 15px 15px 0;
+		width: 15px;
+		right: -15px;
 		animation: navFall 20s forwards;
 		animation-delay: 61s;
 	}
@@ -103,121 +115,94 @@
 	.Balloon {
 		position: absolute;
 		top: 25px;
-		right: 0;
+		right: 5px;
 		z-index: -1;
 		animation: balloonFloat 30s linear forwards;
 		animation-delay: 62.5s;
 	}
 
-	.navbar .name {
-		float: left;
+	.Balloon :global(svg) {
+		width: 40px;
+		height: 40px;
+		stroke: var(--acolor);
+		color: var(--acolor);
+		fill: var(--acolor);
+	}
+
+	.nameplate .name {
 		color: var(--pcolor);
 		font-family: var(--sfont);
-		padding: 7px 0 0 28px;
-		font-size: 2rem;
-		letter-spacing: 2px;
+		font-size: 2.2rem;
+		letter-spacing: 1.5px;
 		text-transform: uppercase;
-		font-weight: bold;
-	}
-
-	.navbar .burgerMenu {
-		float: right;
-		width: 35px;
-		height: 35px;
-		margin: 9px 10px;
-		color: var(--pcolor);
-		visibility: hidden;
-	}
-
-	.navbar .burgerMenu :global(button:hover) {
-		color: var(--ocolor);
+		margin: 0;
 	}
 
 	.content {
 		width: 100%;
-		height: 100%;
-		padding: 50px 8px 8px 20px;
-		display: flex;
-	}
-
-	.about {
-		width: 50%;
-		height: 100%;
+		padding: 84px 0px 10px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
-		text-align: center;
-	}
-
-	.about h1 {
-		font-size: 2.4rem;
-		color: var(--acolor);
-		margin-bottom: 25px;
-		font-weight: 900;
 	}
 
 	.me {
-		width: 50%;
-		height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		text-align: center;
+		padding: 15px;
 	}
 
 	.profile {
-		width: 200px;
-		height: 200px;
-		padding: 20px;
-		border-radius: 20%;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+	}
+
+	.about p {
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+		max-width: 340px;
+		text-align: center;
+		color: var(--ocolor);
+		line-height: 2.2;
+		font-weight: 500;
+		padding: 5px 0;
 	}
 
 	@media (max-width: 650px) {
 		.container {
 			width: 250px;
 			height: unset;
+			padding: 10px 0;
 		}
 
-		.navbar {
-			width: 270px;
+		.nameplate {
+			width: 265px;
 		}
 
-		.navbar .name {
-			padding: 12px 0 10px 28px;
+		.nameplate .name {
 			font-size: 1.5rem;
 			letter-spacing: 2px;
-		}
-		.navbar .burgerMenu {
-			float: unset;
-			position: absolute;
-			top: 52px;
-			right: 0px;
-			width: 30px;
-			height: 30px;
-			color: var(--acolor);
+			margin: 0 0 0 13px;
 		}
 
 		.content {
-			padding: 100px 5px 35px 5px;
+			padding: 70px 5px 5px 5px;
 			flex-direction: column;
 		}
 
-		.about {
-			width: 100%;
-		}
-
-		.about h1 {
-			margin: 15px;
-		}
-
-		.me {
+		.about p {
+			font-size: 0.75rem;
 			width: 100%;
 		}
 
 		.profile {
-			margin: 10px 0 0;
+			width: 130px;
+			height: 130px;
+			border-radius: 50%;
 		}
 	}
 
@@ -266,23 +251,23 @@
 			z-index: -1;
 		}
 		20% {
-			transform: translateY(-35px) translateX(40px);
+			transform: translateY(-35px) translateX(40px) scale(1);
 			z-index: -1;
 		}
 		40% {
-			transform: translateY(-100px) translateX(80px);
+			transform: translateY(-100px) translateX(80px) scale(2);
 			z-index: 1;
 		}
 		75% {
-			transform: translateY(-200px) translateX(4px);
+			transform: translateY(-200px) translateX(4px) scale(2);
 			z-index: 1;
 		}
 		90% {
-			transform: translateY(-300px) translateX(60px);
+			transform: translateY(-300px) translateX(60px) scale(3);
 			z-index: 1;
 		}
 		100% {
-			transform: translateY(-4000px) translateX(40px);
+			transform: translateY(-4000px) translateX(40px) scale(4);
 			z-index: 1;
 		}
 	}

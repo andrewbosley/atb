@@ -18,7 +18,6 @@
 	button {
 		position: relative;
 		overflow: hidden;
-		transition: all 0.7s ease;
 		font-weight: 500;
 		min-width: 135px;
 		padding: 12px;
